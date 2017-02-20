@@ -1,14 +1,12 @@
 #
 """
-This short code snippet utilizes the new animation package in matplotlib 1.1.0
+This short code snippet utilizes the new animation package in matplotlib 1.1.0.
 It's the shortest snippet that I know of that can produce an animate plot in
-python. I'm hoping that the animation package can be improved so that one could
-more simply animate things. What do you think?
+python.
 """
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
-
 
 def simData():
 # this function is called as the argument for
@@ -39,7 +37,10 @@ def simPoints(simData):
 ##
 fig = plt.figure()
 ax = fig.add_subplot(111)
-line, = ax.plot([], [], 'bo', ms=10) # I'm still not clear on this stucture...
+# the line below sets up a generator; in the call,
+# 'bo' plots blue (b) circles (o)
+#  ms=10 sets the marker size (ms) to 10 (pixels?)
+line, = ax.plot([], [], 'bo', ms=10)
 ax.set_ylim(-1, 1)
 ax.set_xlim(0, 10)
 ##
