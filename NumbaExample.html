@@ -11774,7 +11774,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Timing-Python-code-and-speeding-things-up-with-Numba">Timing Python code and speeding things up with Numba<a class="anchor-link" href="#Timing-Python-code-and-speeding-things-up-with-Numba">&#182;</a></h1><p>For many small coding tasks, we use the computer to analyze a small amount of date, or simulate a simple system and speed is not really an issue. However, there are certainly many circumstances where speed <strong>is</strong> important. This post will show</p>
+<h1 id="Timing-Python-code-and-speeding-things-up-with-Numba">Timing Python code and speeding things up with Numba<a class="anchor-link" href="#Timing-Python-code-and-speeding-things-up-with-Numba">&#182;</a></h1><p>For many small coding tasks, we use the computer to analyze a small amount of data, or we use it to simulate a simple system and speed is not really an issue. However, there are certainly many circumstances where speed <strong>is</strong> important. This post will show</p>
 
 <pre><code>1. how to use python's *timeit* module to time code snippets and functions
 2. how to use numba to speed up code (significantly---often by more than 10x)</code></pre>
@@ -11791,7 +11791,7 @@ div#notebook {
 <p>timeit.timeit(stmt='pass', setup='pass', timer=<default timer>, number=1000000, globals=None)</p>
 <p>Create a Timer instance with the given statement, setup code and timer function and run its timeit() method with <em>number</em> executions. The optional globals argument specifies a namespace in which to execute the code.</p>
 <p>The timeit.timeit() function returns a the time needed in units of seconds. Be careful when executing this function as it defaults to a million executions, and this could be prohibitively long for a complex function.</p>
-<p>Let's start with a simple example and get progressiely fancier.</p>
+<p>Let's start with a simple example and get progressively fancier.</p>
 
 </div>
 </div>
