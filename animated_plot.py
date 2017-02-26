@@ -8,32 +8,34 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
+
 def simData():
-# this function is called as the argument for
-# the simPoints function. This function contains
-# (or defines) and iterator---a device that computes
-# a value, passes it back to the main program, and then
-# returns to exactly where it left off in the function.
-# I believe that one has to use this method to animate a plot
-# using the matplotlib animation package.
+    # this function is called as the argument for
+    # the simPoints function. This function contains
+    # (or defines) and iterator---a device that computes
+    # a value, passes it back to the main program, and then
+    # returns to exactly where it left off in the function.
+    # I believe that one has to use this method to animate a plot
+    # using the matplotlib animation package.
     t_max = 10.0
     dt = 0.05
     x = 0.0
     t = 0.0
     while t < t_max:
-        x = np.sin(np.pi*t)
+        x = np.sin(np.pi * t)
         t = t + dt
         yield x, t
 
+
 def simPoints(simData):
     x, t = simData[0], simData[1]
-    time_text.set_text(time_template%(t))
+    time_text.set_text(time_template % (t))
     line.set_data(t, x)
     return line, time_text
 
 
 ##
-##   set up figure for plotting:
+# set up figure for plotting:
 ##
 fig = plt.figure()
 ax = fig.add_subplot(111)
@@ -46,7 +48,7 @@ ax.set_xlim(0, 10)
 ##
 time_template = 'Time = %.1f s'    # prints running simulation time
 time_text = ax.text(0.05, 0.9, '', transform=ax.transAxes)
-## Now call the animation package:
+# Now call the animation package:
 ani = animation.FuncAnimation(fig, simPoints, simData, blit=False, interval=10,
-    repeat=True)
+                              repeat=True)
 plt.show()
